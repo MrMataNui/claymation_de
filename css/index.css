@@ -1,0 +1,81 @@
+html {
+	margin: auto;
+	background-image: url('../general_background.png');
+	background-attachment: fixed;
+}
+
+body {
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 1em !important;
+	padding: 2%;
+}
+
+#date2019 h2 {
+	height: 2.5em;
+}
+
+button[id^='lang-'] {
+	background-color: #8a5be2;
+	border-color: #8a2be2;
+	border-width: 1px;
+	height: 3em;
+	width: 6.5em;
+}
+button[id^='lang-']:hover {
+	cursor: pointer;
+}
+
+.pacifico {
+	font-family: 'Pacifico', cursive;
+}
+
+.saira-stencil {
+	font-family: 'Saira Stencil One', cursive;
+}
+
+.clearfix {
+	overflow: auto;
+	zoom: 1;
+}
+
+.container {
+	display: -webkit-flex;
+	display: flex;
+}
+
+.initial {
+	-webkit-flex: initial;
+	flex: initial;
+	width: 200px;
+	min-width: 100px;
+}
+
+.none {
+	-webkit-flex: none;
+	flex: none;
+	width: 200px;
+}
+
+.flex1 {
+	-webkit-flex: 1;
+	flex: 1;
+}
+
+.flex2 {
+	-webkit-flex: 2;
+	flex: 2;
+}
+
+span[id$='-year'] {
+	font-size: 120%;
+}
+
+[id^='Inktober-day'] {
+	cursor: pointer;
+	width: 70%;
+	margin: 0 auto;
+}
+
+/* #previous-year:hover, #following-year:hover { color: #FF0; cursor: pointer; } */

@@ -1,0 +1,31 @@
+#ice-climbers {
+	width: 100%;
+	height: 50%;
+}
+
+#pineapple-man {
+	width: 70%;
+	height: 70%;
+}
+
+#pineapple-man2 {
+	width: 35%;
+	height: 50%;
+}
+
+#sir-pine {
+	width: 35%;
+	height: 35%;
+}
+
+[id^='four-armed-test'] {
+	width: 40%;
+	height: 35%;
+}
+
+img#morgan,
+img[id^='sea-creature'],
+img[id^='Inktober'] {
+	width: 50%;
+	height: 35%;
+}
