@@ -105,8 +105,7 @@ li#Datum2019 {
 }
 
 #Monate li {
-	max-width: 300px;
-	/* // width: 400px; */
+	/* width: 400px; */
 	height: 600px;
 	list-style: none;
 	/* text-align: center; // add */

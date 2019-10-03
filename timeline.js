@@ -6,16 +6,16 @@ $(() => {
 	});
 
 	$('[class^=Inktober-Tag]').css('display', 'none');
-	$('[id^=Inktober-Tag]').click(function() {
-		inktober($(this));
+	$('[id$=-Inktober]').click(function() {
+		inktober($(this).children(':first'));
 	});
 
 	const woche = 1;
 	$('[id^=Woche]').each(function() {
-		inktoberWochen($(this), woche);
+		inktoberImg($(this), woche, ['#Woche', '']);
 	});
 	$('[id$=Inktober]').each(function() {
-		inktoberTage($(this), woche);
+		inktoberImg($(this), woche * 7, ['#Tag-', '-Inktober']);
 	});
 
 	// $('[id$=-Jahr]').css('cursor', 'pointer');
@@ -38,29 +38,25 @@ function inktober(Standort) {
 }
 
 function inktoberWochen(Standort, woche) {
-	// if () {}
 	let länge = 0;
-	for (let i = 0; i < woche; i++) {
-		if (Standort.not(`#Woche${i + 1}`).length) {
-			länge++;
-		}
-	}
-	if (länge === woche) {
-		Standort.css('display', 'none');
-	}
+	for (let i = 0; i < woche; i++) { if (Standort.not(`#Woche${i + 1}`).length) { länge++; } }
+	if (länge === woche) { Standort.css('display', 'none'); }
 }
 
 function inktoberTage(Standort, woche) {
 	const max = woche * 7;
 	let länge = 0;
+	for (let i = 0; i < max; i++) { if (Standort.not(`#Tag-${i + 1}-Inktober`).length) { länge++; } }
+	if (länge === max) { Standort.css('display', 'none'); }
+}
+
+function inktoberImg(Standort, max, getPlace) {
+	let länge = 0;
 	for (let i = 0; i < max; i++) {
-		if (Standort.not(`#Tag-${i + 1}-Inktober`).length) {
-			länge++;
-		}
+		let locationID = getPlace[0] + (i + 1) + getPlace[1];
+		if (Standort.not(locationID).length) { länge++; }
 	}
-	if (länge === max) {
-		Standort.css('display', 'none');
-	}
+	if (länge === max) { Standort.css('display', 'none'); }
 }
 
 function aufKlick(Standort) {

@@ -77,8 +77,17 @@ span[id$='-Jahr'] {
 }
 
 [id^='Inktober-Tag'] {
-	cursor: pointer;
+	width: 70%;
 	margin: 0 auto;
+}
+
+[id$='-Inktober'] {
+	cursor: pointer;
+	padding: 0 22px;
+}
+
+[id$='-Inktober']:hover {
+	border: 1px solid white;
 }
 
 /* [id$='Inktober'] [class^='Inktober-Tag']:not(.ausgewählt) { height: 1.5em; } */
