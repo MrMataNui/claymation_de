@@ -1,8 +1,6 @@
 $(() => {
 	// initialClass();
 
-	// $('[class^=Inktober-Tag]').after('<br />');
-
 	$('[id^=2019]').click(function() {
 		aufKlick($(this));
 	});
@@ -12,8 +10,12 @@ $(() => {
 		inktober($(this));
 	});
 
+	const woche = 1;
+	$('[id^=Woche]').each(function() {
+		inktoberWochen($(this), woche);
+	});
 	$('[id$=Inktober]').each(function() {
-		inktoberTage($(this));
+		inktoberTage($(this), woche);
 	});
 
 	// $('[id$=-Jahr]').css('cursor', 'pointer');
@@ -35,8 +37,21 @@ function inktober(Standort) {
 	$(`div.${id}`).css('display', display);
 }
 
-function inktoberTage(Standort) {
-	const max = 7;
+function inktoberWochen(Standort, woche) {
+	// if () {}
+	let länge = 0;
+	for (let i = 0; i < woche; i++) {
+		if (Standort.not(`#Woche${i + 1}`).length) {
+			länge++;
+		}
+	}
+	if (länge === woche) {
+		Standort.css('display', 'none');
+	}
+}
+
+function inktoberTage(Standort, woche) {
+	const max = woche * 7;
 	let länge = 0;
 	for (let i = 0; i < max; i++) {
 		if (Standort.not(`#Tag-${i + 1}-Inktober`).length) {

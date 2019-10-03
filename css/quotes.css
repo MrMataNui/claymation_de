@@ -29,3 +29,15 @@ q::after,
 .Zitate::after {
 	content: close-quote;
 }
+
+.woche-sortieren {
+	quotes: '«' '»';
+}
+
+.woche-sortieren::before {
+	content: open-quote;
+}
+
+.woche-sortieren::after {
+	content: close-quote;
+}
