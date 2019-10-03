@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Tonanimation</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<link href="https://fonts.googleapis.com/css?family=Pacifico|Saira+Stencil+One&display=swap" rel="stylesheet" />
 		<script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<link rel="stylesheet" type="text/css" href="css/navbar.css" />
 		<link rel="stylesheet" type="text/css" href="css/image.css" />
 		<link rel="stylesheet" type="text/css" href="css/timeline.css" />
 		<link rel="stylesheet" type="text/css" href="css/quotes.css" />
 		<script src="./timeline.js"></script>
-		<title> Claymation </title>
 	</head>
 	<body>
 		<nav id="head-nav">
@@ -25,21 +26,21 @@
 		<h1 id="header" class="pacifico">MrMataNuis Tonanimation Fortschritt</h1>
 		<hr /> <br />
 		<h2> Hier gehe ich meinen Tonanimation Fortschritt durch. </h2>
-		<div id="timeline">
-			<ul id="dates">
-				<li id="date2019">
-					<h2> Zeitleiste </h2>
-					<span id="previous-year">«</span>
+		<div id="Zeitleiste">
+			<ul id="Termine">
+				<li id="Datum2019">
+					<h2>Zeitleiste</h2>
+					<span id="Bisherige-Jahr">«</span>
 					<num>2019</num>
-					<span id="following-year">»</span>
+					<span id="Nächster-Jahr">»</span>
 					<ul>
-						<li id="2019jan" class="selected">
+						<li id="2019jan" class="ausgewählt">
 							<div>Januar</div>
 						</li>
-						<li id="2019mar">
+						<li id="2019mär">
 							<div>März</div>
 						</li>
-						<li id="2019may">
+						<li id="2019mai">
 							<div>Mai</div>
 						</li>
 						<li id="2019aug">
@@ -49,28 +50,23 @@
 							<div>September</div>
 						</li>
 						<li id="2019oct">
-							<div class="quotes">Inktober</div>
+							<div class="Zitate">Inktober</div>
 						</li>
 					</ul>
 				</li>
 			</ul>
-			<ul id="months">
-				<li id="2019jan" class="selected">
+			<ul id="Monate">
+				<li id="2019jan" class="ausgewählt">
 					<h2>28. Januar</h2>
-					<p>
-						Dies ist mein Versuch bei
-						<span class="quotes">Popo</span>
-						aus dem Videospiel
-						<span class="quotes">Ice Climbers</span>
-					</p>
+					<p> Dies ist mein Versuch bei <q>Popo</q> aus dem Videospiel <q>Ice Climbers</q> </p>
 					<img id="ice-climbers" alt="Ice Climbers" src="images/Ice Climbers/ice-climber.jpg" />
 				</li>
-				<li id="2019mar">
+				<li id="2019mär">
 					<h2>15. März</h2>
 					<p>Erster Entwurf eines Ananasmannes</p>
 					<img id="pineapple-man" alt="Pineapple Man" src="images/pineapple-man.jpg" />
 				</li>
-				<li id="2019may">
+				<li id="2019mai">
 					<h2>2. Mai</h2>
 					<div>
 						<p>Aktualisiert die Arme des Ananasmannes</p>
@@ -115,73 +111,82 @@
 				<li id="2019oct">
 					<div id="Inktober-definition">
 						<h2>Inktober</h2>
-						<p>
-							<blockquote>Jedes Jahr im Oktober stellen sich Künstler auf der ganzen Welt der
-								Herausforderung des Inktober-Zeichnens, indem sie den ganzen Monat über täglich eine Tuschezeichnung
-								machen.</blockquote>
-							- von <a href="https://inktober.com/" target="_blank">inktober.com</a>
-						</p>
+						<blockquote>Jedes Jahr im Oktober stellen sich Künstler auf der ganzen Welt der
+							Herausforderung des Inktober-Zeichnens, indem sie den ganzen Monat über täglich eine Tuschezeichnung
+							machen.</blockquote>
+						- von <a href="https://inktober.com/" target="_blank">inktober.com</a>
 					</div>
 					<h2>Kunstaufforderungliste</h2>
-					<br />
-					<div id="day-1-Inktober">
-						<h3 id="Inktober-day-1">Tag 1: Ring</h3>
-						<div class="Inktober-day-1">
-							<p> Die Kunstaufforderung für Tag 1: <span class="quotes">Ring</span>. </p>
+					<div class="">
+						<h3 class="Zitate">Woche 1</h3>
+						<div id="Woche1" class="Inktober flex">
+							<div id="Tag-1-Inktober">
+								<h3 id="Inktober-Tag-1">1</h3>
+							</div>
+							<div id="Tag-2-Inktober">
+								<h3 id="Inktober-Tag-2">2</h3>
+							</div>
+							<div id="Tag-3-Inktober">
+								<h3 id="Inktober-Tag-3">3</h3>
+							</div>
+							<div id="Tag-4-Inktober">
+								<h3 id="Inktober-Tag-4">4</h3>
+							</div>
+							<div id="Tag-5-Inktober">
+								<h3 id="Inktober-Tag-5">5</h3>
+							</div>
+							<div id="Tag-6-Inktober">
+								<h3 id="Inktober-Tag-6">6</h3>
+							</div>
+							<div id="Tag-7-Inktober">
+								<h3 id="Inktober-Tag-7">7</h3>
+							</div>
+						</div>
+					</div>
+					<div id="Beschreibung">
+						<div class="Inktober-Tag-1">
+							<p> Die Kunstaufforderung für Tag 1: <q>Ring</q>. </p>
 							<p>
 								Ich hatte das benutzt, um die Hände besser zu formen
 								-und Handgelenke zu einem gewissen Grad-
 								und kleinere Details hinzufügen.
 							</p>
-							<img id="Inktober-ring" alt="Inktober Ring" src="images/2019_Inktober_Tag_1_Ring.jpg" />
+							<img id="Inktober-ring" alt="Inktober Ring" src="images/Inktober/2019_Inktober_Tag_1_Ring.jpg" />
 						</div>
-					</div>
-					<div id="day-2-Inktober">
-						<h3 id="Inktober-day-2">Tag 2: Geistlos</h3>
-						<div class="Inktober-day-2">
-							<p> Die Kunstaufforderung für Tag 2: <span class="quotes">Geistlos</span>. </p>
-							<p> </p>
-							<!-- <img id="Inktober-geistlos" alt="Inktober Geistlos" src="images/2019_Inktober_Tag_2_Geistlos.jpg" /> -->
+						<div class="Inktober-Tag-2">
+							<p> Die Kunstaufforderung für Tag 2: <q>Geistlos</q>. </p>
+							<p>
+								Ich hatte das benutzt,
+								um die Kopfformung zu verbessern
+								und verschiedene Augenformen auszuprobieren.
+							</p>
+							<img id="Inktober-geistlos" alt="Inktober Geistlos"
+								src="images/Inktober/2019_Inktober_Tag_2_Geistlos.jpg" />
 						</div>
-					</div>
-					<div id="day-3-Inktober">
-						<h3 id="Inktober-day-3">Tag 3: Köder</h3>
-						<div class="Inktober-day-3">
-							<p> Die Kunstaufforderung für Tag 3: <span class="quotes">Köder</span>. </p>
+						<div class="Inktober-Tag-3">
+							<p> Die Kunstaufforderung für Tag 3: <q>Köder</q>. </p>
 							<p> </p>
-							<!-- <img id="Inktober-köder" alt="Inktober Köder" src="images/2019_Inktober_Tag_3_Köder.jpg" /> -->
+							<!-- <img id="Inktober-köder" alt="Inktober Köder" src="images/Inktober/2019_Inktober_Tag_3_Köder.jpg" /> -->
 						</div>
-					</div>
-					<div id="day-4-Inktober">
-						<h3 id="Inktober-day-4">Tag 4: Einfrieren</h3>
-						<div class="Inktober-day-4">
-							<p> Die Kunstaufforderung für Tag 4: <span class="quotes">Einfrieren</span>. </p>
+						<div class="Inktober-Tag-4">
+							<p> Die Kunstaufforderung für Tag 4: <q>Einfrieren</q>. </p>
 							<p> </p>
-							<!-- <img id="Inktober-einfrieren" alt="Inktober Einfrieren" src="images/2019_Inktober_Tag_4_Einfrieren.jpg" /> -->
+							<!-- <img id="Inktober-einfrieren" alt="Inktober Einfrieren" src="images/Inktober/2019_Inktober_Tag_4_Einfrieren.jpg" /> -->
 						</div>
-					</div>
-					<div id="day-5-Inktober">
-						<h3 id="Inktober-day-5">Tag 5: Bauen</h3>
-						<div class="Inktober-day-5">
-							<p> Die Kunstaufforderung für Tag 5: <span class="quotes">Bauen</span>. </p>
+						<div class="Inktober-Tag-5">
+							<p> Die Kunstaufforderung für Tag 5: <q>Bauen</q>. </p>
 							<p> </p>
-							<!-- <img id="Inktober-bauen" alt="Inktober Bauen" src="images/2019_Inktober_Tag_5_Bauen.jpg" /> -->
+							<!-- <img id="Inktober-bauen" alt="Inktober Bauen" src="images/Inktober/2019_Inktober_Tag_5_Bauen.jpg" /> -->
 						</div>
-					</div>
-					<div id="day-6-Inktober">
-						<h3 id="Inktober-day-6">Tag 6: Heiser</h3>
-						<div class="Inktober-day-6">
-							<p> Die Kunstaufforderung für Tag 6: <span class="quotes">Heiser</span>. </p>
+						<div class="Inktober-Tag-6">
+							<p> Die Kunstaufforderung für Tag 6: <q>Heiser</q>. </p>
 							<p> </p>
-							<!-- <img id="Inktober-heiser" alt="Inktober Heiser" src="images/2019_Inktober_Tag_6_Heiser.jpg" /> -->
+							<!-- <img id="Inktober-heiser" alt="Inktober Heiser" src="images/Inktober/2019_Inktober_Tag_6_Heiser.jpg" /> -->
 						</div>
-					</div>
-					<div id="day-7-Inktober">
-						<h3 id="Inktober-day-7">Tag 7: Verzaubert</h3>
-						<div class="Inktober-day-7">
-							<p> Die Kunstaufforderung für Tag 7: <span class="quotes">Verzaubert</span>. </p>
+						<div class="Inktober-Tag-7">
+							<p> Die Kunstaufforderung für Tag 7: <q>Verzaubert</q>. </p>
 							<p> </p>
-							<!-- <img id="Inktober-verzaubert" alt="Inktober Verzaubert" src="images/2019_Inktober_Tag_7_Verzaubert.jpg" /> -->
+							<!-- <img id="Inktober-verzaubert" alt="Inktober Verzaubert" src="images/Inktober/2019_Inktober_Tag_7_Verzaubert.jpg" /> -->
 						</div>
 					</div>
 				</li>

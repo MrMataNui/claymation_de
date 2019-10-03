@@ -12,18 +12,18 @@ body {
 	padding: 2%;
 }
 
-#date2019 h2 {
+#Datum2019 h2 {
 	height: 2.5em;
 }
 
-button[id^='lang-'] {
+button[id^='Sprache-'] {
 	background-color: #8a5be2;
 	border-color: #8a2be2;
 	border-width: 1px;
 	height: 3em;
 	width: 6.5em;
 }
-button[id^='lang-']:hover {
+button[id^='Sprache-']:hover {
 	cursor: pointer;
 }
 
@@ -33,6 +33,10 @@ button[id^='lang-']:hover {
 
 .saira-stencil {
 	font-family: 'Saira Stencil One', cursive;
+}
+
+.flex {
+	display: flex;
 }
 
 .clearfix {
@@ -68,14 +72,14 @@ button[id^='lang-']:hover {
 	flex: 2;
 }
 
-span[id$='-year'] {
+span[id$='-Jahr'] {
 	font-size: 120%;
 }
 
-[id^='Inktober-day'] {
+[id^='Inktober-Tag'] {
 	cursor: pointer;
-	width: 70%;
 	margin: 0 auto;
 }
 
-/* #previous-year:hover, #following-year:hover { color: #FF0; cursor: pointer; } */
+/* [id$='Inktober'] [class^='Inktober-Tag']:not(.ausgewählt) { height: 1.5em; } */
+/* #Bisherige-Jahr:hover, #Nächster-Jahr:hover { color: #FF0; cursor: pointer; } */

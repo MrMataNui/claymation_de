@@ -11,7 +11,7 @@ body {
 }
 
 a,
-#dates li div {
+#Termine li div {
 	color: #ffc;
 	text-decoration: none;
 	-webkit-transition: 0.5s;
@@ -20,16 +20,16 @@ a,
 	-ms-transition: 0.5s;
 	transition: 0.5s;
 }
-#dates li div {
+#Termine li div {
 	cursor: pointer;
 }
 
 ul h2,
 ul h3,
 a:hover,
-a.selected,
-#dates li div:hover,
-#dates li.selected div {
+a.ausgewählt,
+#Termine li div:hover,
+#Termine li.ausgewählt div {
 	color: #fc0;
 }
 
@@ -57,7 +57,7 @@ h2 {
 	margin-bottom: 20px;
 }
 
-#timeline {
+#Zeitleiste {
 	width: 50em;
 	height: 600px;
 	overflow: hidden;
@@ -66,14 +66,14 @@ h2 {
 	/* background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/dot.gif') 3px top repeat-y; */
 }
 
-#dates {
+#Termine {
 	width: 20em;
 	height: 600px;
 	overflow: hidden;
 	float: left;
 }
 
-#dates li {
+#Termine li {
 	list-style: none;
 	line-height: 100px;
 	font-size: 24px;
@@ -81,30 +81,30 @@ h2 {
 	/* background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/biggerdot.png') left center no-repeat; */
 }
 
-#dates a,
-#dates div {
+#Termine a,
+#Termine div {
 	line-height: 38px;
 	padding-bottom: 10px;
 }
 
-li#date2019,
-#dates .selected {
+li#Datum2019,
+#Termine .ausgewählt {
 	font-size: 38px;
 }
 
-li#date2019 {
+li#Datum2019 {
 	width: 8em;
 	color: #c0f;
 }
 
-#months {
+#Monate {
 	width: 400px;
 	height: 600px;
 	overflow: hidden;
 	float: left;
 }
 
-#months li {
+#Monate li {
 	max-width: 300px;
 	/* // width: 400px; */
 	height: 600px;
@@ -112,16 +112,16 @@ li#date2019 {
 	/* text-align: center; // add */
 }
 
-#months li[id^='2019']:not(.selected) {
+#Monate li[id^='2019']:not(.ausgewählt) {
 	display: none;
 }
 
-#months li[id^='2019'].selected {
+#Monate li[id^='2019'].ausgewählt {
 	display: block;
 }
 
-/* #months li img, */
-#months li.selected img {
+/* #Monate li img, */
+#Monate li.ausgewählt img {
 	-webkit-transform: scale(1.1, 1.1);
 	-moz-transform: scale(1.1, 1.1);
 	-o-transform: scale(1.1, 1.1);
@@ -129,7 +129,7 @@ li#date2019 {
 	transform: scale(1.1, 1.1);
 }
 
-#months li img {
+#Monate li img {
 	/* // float: left; */
 	/* width: 200px; // add */
 	margin: 10px auto;
@@ -150,14 +150,14 @@ li#date2019 {
 	transform: scale(0.7, 0.7);
 }
 
-#months li h1 {
+#Monate li h1 {
 	color: #fc0;
 	font-size: 48px;
 	text-align: center;
 	text-shadow: #000 1px 1px 2px;
 }
 
-#months li p {
+#Monate li p {
 	font-size: 14px;
 	margin: 10px 20px;
 	font-weight: normal;
@@ -169,6 +169,9 @@ li#date2019 {
 	width: 500px;
 	height: 80px;
 	position: absolute;
+}
+[class^='Inktober-Tag'] {
+	width: 110%;
 }
 
 #grad_top {
@@ -213,4 +216,10 @@ li#date2019 {
 #next.disabled,
 #prev.disabled {
 	opacity: 0.2;
+}
+
+.Inktober {
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
 }

@@ -1,100 +1,81 @@
 $(() => {
 	// initialClass();
 
-	$('[class^=Inktober-day]').after('<br />');
-	$('[id^=lang-]').click(function() {
-		langChange($(this));
-	});
+	// $('[class^=Inktober-Tag]').after('<br />');
 
 	$('[id^=2019]').click(function() {
-		onClick($(this));
+		aufKlick($(this));
 	});
 
-	$('[class^=Inktober-day]').css('display', 'none');
-	$('[id^=Inktober-day]').click(function() {
+	$('[class^=Inktober-Tag]').css('display', 'none');
+	$('[id^=Inktober-Tag]').click(function() {
 		inktober($(this));
 	});
 
 	$('[id$=Inktober]').each(function() {
-		inktoberDays($(this));
+		inktoberTage($(this));
 	});
 
-	// $('[id$=-year]').css('cursor', 'pointer');
-	// $('[id$=-year]').click(function() { yearChange($(this)); });
+	// $('[id$=-Jahr]').css('cursor', 'pointer');
+	// $('[id$=-Jahr]').click(function() { JahrVeränderung($(this)); });
 });
 
-function inktober(location) {
-	const id = location.attr('id');
-	const classDisplay = $(`[class^=${id}]`).css('display');
-	const display = classDisplay === 'none' ? 'block' : 'none';
-	$('[class^=Inktober-day]').css('display', 'none');
+function initialClass() {
+	$('#Monate li').addClass('abgewählt');
+	$('#2019jan').addClass('ausgewählt');
+	$('#Monate li#2019jan').addClass('ausgewählt');
+	$('#Monate li#2019jan').removeClass('abgewählt');
+}
+
+function inktober(Standort) {
+	const id = Standort.attr('id');
+	const classAnzeige = $(`div.${id}`).css('display');
+	const display = classAnzeige === 'none' ? 'block' : 'none';
+	$('[class^=Inktober-Tag]').css('display', 'none');
 	$(`div.${id}`).css('display', display);
 }
 
-function inktoberDays(location) {
-	const max = 1;
-	let length = 0;
+function inktoberTage(Standort) {
+	const max = 7;
+	let länge = 0;
 	for (let i = 0; i < max; i++) {
-		if (location.not(`#day-${i + 1}-Inktober`).length) {
-			length++;
+		if (Standort.not(`#Tag-${i + 1}-Inktober`).length) {
+			länge++;
 		}
 	}
-	if (length === max) {
-		location.css('display', 'none');
+	if (länge === max) {
+		Standort.css('display', 'none');
 	}
 }
 
-function initialClass() {
-	$('#months li').addClass('deselected');
-	$('#2019jan').addClass('selected');
-	$('#months li#2019jan').addClass('selected');
-	$('#months li#2019jan').removeClass('deselected');
+function aufKlick(Standort) {
+	const id = Standort.attr('id');
+	$('#Termine [id^=2019]').removeClass('ausgewählt');
+	$('#Monate li').removeClass('ausgewählt');
+
+	$(`#${id}`).addClass('ausgewählt');
+	$(`#Monate li#${id}`).addClass('ausgewählt');
+
+	// $('#Monate li').addClass('abgewählt');
+	// $(`#Monate li#${Datum}`).removeClass('abgewählt');
 }
 
-function langChange(location) {
-	const lang = location.attr('id');
-	$('.en').css('display', 'none');
-	$('.de').css('display', 'none');
-	switch (lang) {
-		case 'lang-en':
-			$('.en').css('display', 'block');
-			$('#lang-name').html('Language: English');
-			break;
-		case 'lang-de':
-			$('.de').css('display', 'block');
-			$('#lang-name').html('Sprache: Deutsch');
-			break;
-	}
-}
-
-function onClick(location) {
-	const id = location.attr('id');
-	$('#dates [id^=2019]').removeClass('selected');
-	$('#months li').removeClass('selected');
-
-	$(`#${id}`).addClass('selected');
-	$(`#months li#${id}`).addClass('selected');
-
-	// $('#months li').addClass('deselected');
-	// $(`#months li#${date}`).removeClass('deselected');
-}
-
-function yearChange(location) {
-	const date = location.attr('id');
-	const getYears = [2019, 2020];
-	let number = $('#date2019 num').html();
-	number = parseInt($.trim(number));
-	switch (date) {
-		case 'previous-year':
-			if (getYears.includes(number - 1)) {
-				number--;
+function JahrVeränderung(Standort) {
+	const Datum = Standort.attr('id');
+	const JahreBekommen = [2019, 2020];
+	let Nummer = $('#Datum2019 num').html();
+	Nummer = parseInt($.trim(Nummer));
+	switch (Datum) {
+		case 'Bisherige-Jahr':
+			if (JahreBekommen.includes(Nummer - 1)) {
+				Nummer--;
 			}
 			break;
-		case 'following-year':
-			if (getYears.includes(number + 1)) {
-				number++;
+		case 'Nächster-Jahr':
+			if (JahreBekommen.includes(Nummer + 1)) {
+				Nummer++;
 			}
 			break;
 	}
-	$('#date2019 num').html(number);
+	$('#Datum2019 num').html(Nummer);
 }
