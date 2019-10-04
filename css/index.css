@@ -86,14 +86,18 @@ span[id$='-Jahr'] {
 	padding: 0 22px;
 }
 
-/* [id^='2019'] div { */
-	/* width: 90%; */
-/* } */
+[id$='-Inktober']:first.selected {
+	background-color: #fc0;
+	color: #0cf;
+}
 
-/* [id^='2019'] div:hover, */
+#Termine [id^='2019'] div {
+	width: 90%;
+}
+
+#Termine [id^='2019'] div:hover,
 [id$='-Inktober']:hover {
 	border: 1px solid white;
 }
-
 /* [id$='Inktober'] [class^='Inktober-Tag']:not(.ausgewählt) { height: 1.5em; } */
 /* #Bisherige-Jahr:hover, #Nächster-Jahr:hover { color: #FF0; cursor: pointer; } */

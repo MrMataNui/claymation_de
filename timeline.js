@@ -5,7 +5,6 @@ $(() => {
 		aufKlick($(this));
 	});
 
-	$('[class^=Inktober-Tag]').css('display', 'none');
 	$('[id$=-Inktober]').click(function() {
 		inktober($(this).children(':first'));
 	});
@@ -31,32 +30,24 @@ function initialClass() {
 
 function inktober(Standort) {
 	const id = Standort.attr('id');
-	const classAnzeige = $(`div.${id}`).css('display');
-	const display = classAnzeige === 'none' ? 'block' : 'none';
-	$('[class^=Inktober-Tag]').css('display', 'none');
-	$(`div.${id}`).css('display', display);
-}
-
-function inktoberWochen(Standort, woche) {
-	let länge = 0;
-	for (let i = 0; i < woche; i++) { if (Standort.not(`#Woche${i + 1}`).length) { länge++; } }
-	if (länge === woche) { Standort.css('display', 'none'); }
-}
-
-function inktoberTage(Standort, woche) {
-	const max = woche * 7;
-	let länge = 0;
-	for (let i = 0; i < max; i++) { if (Standort.not(`#Tag-${i + 1}-Inktober`).length) { länge++; } }
-	if (länge === max) { Standort.css('display', 'none'); }
+	$('[class^=Inktober-Tag]').removeClass('selected');
+	$(`div.${id}`).addClass('selected');
+	// $('[class^=Inktober-Tag]').css('display', 'none');
+	// $(`div.${id}`).css('display', 'block');
 }
 
 function inktoberImg(Standort, max, getPlace) {
 	let länge = 0;
 	for (let i = 0; i < max; i++) {
 		let locationID = getPlace[0] + (i + 1) + getPlace[1];
-		if (Standort.not(locationID).length) { länge++; }
+		if (Standort.not(locationID).length) {
+			länge++;
+		}
 	}
-	if (länge === max) { Standort.css('display', 'none'); }
+	if (länge === max) {
+		// Standort.removeClass('selected');
+		Standort.css('display', 'none');
+	}
 }
 
 function aufKlick(Standort) {

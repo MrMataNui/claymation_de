@@ -103,7 +103,7 @@ li#Datum2019 {
 
 #Monate li {
 	list-style: none;
-	text-align: center; 
+	text-align: center;
 }
 
 #Monate li[id^='2019']:not(.ausgewählt) {
@@ -164,8 +164,14 @@ li#Datum2019 {
 	height: 80px;
 	position: absolute;
 }
+
 [class^='Inktober-Tag'] {
+	display: none;
 	width: 110%;
+}
+
+.selected {
+	display: block;
 }
 
 #grad_top {
