@@ -1,23 +1,24 @@
 $(() => {
-	// initialClass();
-
 	$('[id^=2019]').click(function() {
-		aufKlick($(this));
+		const id = $(this).attr('id');
+		$('#Termine [id^=2019]').removeClass('ausgewählt');
+		$('#Monate li').removeClass('ausgewählt');
+
+		$(`#${id}`).addClass('ausgewählt');
+		$(`#Monate li#${id}`).addClass('ausgewählt');
 	});
 
 	$('[id$=-Inktober]').click(function() {
-		inktober($(this).children(':first'));
+		const id = $(this).children(':first').attr('id');
+		$('[class^=Inktober-Tag]').removeClass('selected');
+		$(`div.${id}`).addClass('selected');
 	});
 
-	const woche = 1;
-	$('[id^=Woche]').each(function() {
-		inktoberImg($(this), woche, ['#Woche', '']);
-	});
-	$('[id$=Inktober]').each(function() {
-		inktoberImg($(this), woche * 7, ['#Tag-', '-Inktober']);
-	});
+	const Wochen = 1;
+	const Tage = Wochen * 7;
+	$('[id^=Woche]').each(function() { inktoberImg($(this), Wochen, ['#Woche', '']); });
+	$('[id$=Inktober]').each(function() { inktoberImg($(this), Tage, ['#Tag-', '-Inktober']); });
 
-	// $('[id$=-Jahr]').css('cursor', 'pointer');
 	// $('[id$=-Jahr]').click(function() { JahrVeränderung($(this)); });
 });
 
@@ -28,38 +29,13 @@ function initialClass() {
 	$('#Monate li#2019jan').removeClass('abgewählt');
 }
 
-function inktober(Standort) {
-	const id = Standort.attr('id');
-	$('[class^=Inktober-Tag]').removeClass('selected');
-	$(`div.${id}`).addClass('selected');
-	// $('[class^=Inktober-Tag]').css('display', 'none');
-	// $(`div.${id}`).css('display', 'block');
-}
-
 function inktoberImg(Standort, max, getPlace) {
 	let länge = 0;
 	for (let i = 0; i < max; i++) {
 		let locationID = getPlace[0] + (i + 1) + getPlace[1];
-		if (Standort.not(locationID).length) {
-			länge++;
-		}
+		if (Standort.not(locationID).length) { länge++; }
 	}
-	if (länge === max) {
-		// Standort.removeClass('selected');
-		Standort.css('display', 'none');
-	}
-}
-
-function aufKlick(Standort) {
-	const id = Standort.attr('id');
-	$('#Termine [id^=2019]').removeClass('ausgewählt');
-	$('#Monate li').removeClass('ausgewählt');
-
-	$(`#${id}`).addClass('ausgewählt');
-	$(`#Monate li#${id}`).addClass('ausgewählt');
-
-	// $('#Monate li').addClass('abgewählt');
-	// $(`#Monate li#${Datum}`).removeClass('abgewählt');
+	if (länge === max) { Standort.css('display', 'none'); }
 }
 
 function JahrVeränderung(Standort) {
@@ -68,16 +44,8 @@ function JahrVeränderung(Standort) {
 	let Nummer = $('#Datum2019 num').html();
 	Nummer = parseInt($.trim(Nummer));
 	switch (Datum) {
-		case 'Bisherige-Jahr':
-			if (JahreBekommen.includes(Nummer - 1)) {
-				Nummer--;
-			}
-			break;
-		case 'Nächster-Jahr':
-			if (JahreBekommen.includes(Nummer + 1)) {
-				Nummer++;
-			}
-			break;
+		case 'Bisherige-Jahr': if (JahreBekommen.includes(Nummer - 1)) { Nummer--; } break;
+		case 'Nächster-Jahr': if (JahreBekommen.includes(Nummer + 1)) { Nummer++; } break;
 	}
 	$('#Datum2019 num').html(Nummer);
 }

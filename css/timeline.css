@@ -223,3 +223,5 @@ li#Datum2019 {
 	justify-content: space-around;
 	align-items: center;
 }
+
+/* [id$='-Jahr'] { cursor: pointer; } */
