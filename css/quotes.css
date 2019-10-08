@@ -7,37 +7,14 @@ blockquote {
 	quotes: '„' '“';
 }
 
-blockquote::before {
-	content: open-quote;
-}
+q, .Zitate { quotes: ',' '‘'; }
 
-blockquote::after {
-	content: close-quote;
-}
+.woche-sortieren { quotes: '«' '»'; }
 
-q,
-.Zitate {
-	quotes: ',' '‘';
-}
+blockquote::before,
+q::before, .Zitate::before,
+.woche-sortieren::before { content: open-quote; }
 
-q::before,
-.Zitate::before {
-	content: open-quote;
-}
-
-q::after,
-.Zitate::after {
-	content: close-quote;
-}
-
-.woche-sortieren {
-	quotes: '«' '»';
-}
-
-.woche-sortieren::before {
-	content: open-quote;
-}
-
-.woche-sortieren::after {
-	content: close-quote;
-}
+blockquote::after,
+q::after, .Zitate::after,
+.woche-sortieren::after { content: close-quote; }

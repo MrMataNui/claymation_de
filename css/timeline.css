@@ -1,7 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-}
+* { margin: 0; padding: 0; }
 
 body {
 	background: #222;
@@ -10,8 +7,7 @@ body {
 	font-size: 14px;
 }
 
-a,
-#Termine li div {
+a, #Termine li div {
 	color: #ffc;
 	text-decoration: none;
 	-webkit-transition: 0.5s;
@@ -20,8 +16,12 @@ a,
 	-ms-transition: 0.5s;
 	transition: 0.5s;
 }
+
 #Termine li div {
+	width: 70% !important;
+	margin: 0 auto;
 	cursor: pointer;
+	border: 1px solid blueviolet;
 }
 
 ul h2,
@@ -29,28 +29,18 @@ ul h3,
 a:hover,
 a.ausgewählt,
 #Termine li div:hover,
-#Termine li.ausgewählt div {
-	color: #fc0;
-}
+#Termine li.ausgewählt div { color: #fc0; }
 
-h1,
-h2,
-h4,
-h5,
-h6 {
+h1, h2, h4, h5, h6 {
 	text-align: center;
 	color: #ccc;
 	text-shadow: #000 1px 1px 2px;
 	margin-bottom: 5px;
 }
 
-h1 {
-	font-size: 18px;
-}
+h1 { font-size: 18px; }
 
-h2 {
-	font-size: 14px;
-}
+h2 { font-size: 14px; }
 
 .sociales {
 	text-align: center;
@@ -85,15 +75,9 @@ h2 {
 	padding-bottom: 10px;
 }
 
-li#Datum2019,
-#Termine .ausgewählt {
-	font-size: 38px;
-}
+li#Datum2019, #Termine .ausgewählt { font-size: 38px; }
 
-li#Datum2019 {
-	width: 8em;
-	color: #c0f;
-}
+li#Datum2019 { width: 8em; color: #c0f; }
 
 #Monate {
 	width: 400px;
@@ -101,20 +85,12 @@ li#Datum2019 {
 	float: left;
 }
 
-#Monate li {
-	list-style: none;
-	text-align: center;
-}
+#Monate li { list-style: none; text-align: center; }
 
-#Monate li[id^='2019']:not(.ausgewählt) {
-	display: none;
-}
+#Monate li[id^='2019']:not(.ausgewählt) { display: none; }
 
-#Monate li[id^='2019'].ausgewählt {
-	display: block;
-}
+#Monate li[id^='2019'].ausgewählt { display: block; }
 
-/* #Monate li img, */
 #Monate li.ausgewählt img {
 	-webkit-transform: scale(1.1, 1.1);
 	-moz-transform: scale(1.1, 1.1);
@@ -124,8 +100,6 @@ li#Datum2019 {
 }
 
 #Monate li img {
-	/* // float: left; */
-	/* width: 200px; // add */
 	margin: 10px auto;
 	-ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)';
 	/* IE 8 */
@@ -165,30 +139,20 @@ li#Datum2019 {
 	position: absolute;
 }
 
-[class^='Inktober-Tag'] {
-	display: none;
-	width: 110%;
-}
+[class^='Inktober-Tag'] { display: none; width: 110%; }
 
-.selected {
-	display: block;
-}
+.selected { display: block; }
 
-#grad_top {
-	top: 0;
-	/* background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_top.png') repeat-x; */
-}
+#grad_top { top: 0; }
+/* background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_top.png') repeat-x; */
 
-#grad_bottom {
-	bottom: 0;
-	/* background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_bottom.png') repeat-x; */
-}
+#grad_bottom { bottom: 0; }
+/* background: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_bottom.png') repeat-x; */
 
 #next,
 #prev {
 	position: absolute;
 	left: 45%;
-	/* // left: 55%; */
 	font-size: 70px;
 	width: 38px;
 	height: 22px;
@@ -198,20 +162,13 @@ li#Datum2019 {
 	overflow: hidden;
 }
 
-#next:hover,
-#prev:hover {
-	background-position: 0 0;
-}
+#next:hover, #prev:hover { background-position: 0 0; }
 
-#next {
-	bottom: 0;
-	/* background-image: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/next_v.png'); */
-}
+#next { bottom: 0; }
+/* background-image: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/next_v.png'); */
 
-#prev {
-	top: 0;
-	/* background-image: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/prev_v.png'); */
-}
+#prev { top: 0; }
+/* background-image: url('http://www.csslab.cl/ejemplos/timelinr/latest/images/prev_v.png'); */
 
 #next.disabled,
 #prev.disabled {
@@ -223,5 +180,3 @@ li#Datum2019 {
 	justify-content: space-around;
 	align-items: center;
 }
-
-/* [id$='-Jahr'] { cursor: pointer; } */
