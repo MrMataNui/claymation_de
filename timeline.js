@@ -15,10 +15,19 @@ $(() => {
 
 	const Wochen = 2;
 	const Tage = Wochen * 7;
-	$('[id^=Woche]').before('<br />');
+
+	$('[id^=Woche]').each(function() {
+		const id = $(this).attr('id');
+		let wocheRegex;
+
+		for (let i = 0; i < Wochen; i++) { wocheRegex = RegExp(`^Woche${i + 1}`); }
+		if (wocheRegex.test(id)) { $(this).before('<br />'); }
+	});
 	$('[id^=Woche]').each(function() { inktoberImg($(this), Wochen, ['#Woche', '']); });
 	$('[id$=Inktober]').each(function() { inktoberImg($(this), Tage, ['#Tag-', '-Inktober']); });
-/* 	$('[id$=-Jahr]').click(function() {
+
+	/*
+	$('[id$=-Jahr]').click(function() {
 		const Datum = $(this).attr('id'); const JahreBekommen = [2019, 2020];
 		let Nummer = $('#Datum2019 num').html();
 		Nummer = parseInt($.trim(Nummer));
@@ -27,7 +36,8 @@ $(() => {
 			case 'Nächster-Jahr': if (JahreBekommen.includes(Nummer + 1)) { Nummer++; } break;
 		}
 		$('#Datum2019 num').html(Nummer);
-	}); */
+	});
+	*/
 });
 
 function inktoberImg(Standort, max, getPlace) {

@@ -100,7 +100,7 @@ li#Datum2019 { width: 8em; color: #c0f; }
 }
 
 #Monate li img {
-	margin: 10px auto;
+	margin: 1em auto;
 	-ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)';
 	/* IE 8 */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
